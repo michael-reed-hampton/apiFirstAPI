@@ -1,8 +1,8 @@
 swagger: "2.0"
 info:
-  description: "This is my starting openapi document."
+  description: "Example openapi document."
   version: "1.0.0"
-  title: "MRH Starter"
+  title: "Example OpenAPI"
   termsOfService: "http://localhost:8080/terms/"
   contact:
     email: "mrh.hammer.engineering@gmail.com"
@@ -12,8 +12,8 @@ info:
 host: "localhost"
 basePath: "/v1"
 tags:
-  - name: "mrhtemplate"
-    description: "A beginning for openapi documents"
+  - name: "openapi"
+    description: "A example openapi"
     externalDocs:
       description: "Find out more"
       url: "http://localhost:8080/findoutmore"
