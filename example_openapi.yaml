@@ -22,6 +22,42 @@ schemes:
   - "http"
 paths:
   /thing:
+    get:
+      tags:
+        - "thing"
+      summary: "Get all Things"
+      description: "Get Things without a filter"
+      operationId: "listThings"
+      produces:
+        - "application/json"
+      parameters:
+        - name: 'order_by'
+          in: query
+          description: "Ordering for the results"
+          required: false
+          schema:
+            type: string
+            enum:
+              - 'create_date'
+              - 'name'
+        - name: 'page_token'
+          in: query
+          description: Token for the next page
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Thing"
+        "400":
+          description: "Invalid status value"
+      security:
+        - thingtemplate_auth:
+            - "read:things"
     post:
       tags:
         - "thing"
@@ -139,7 +175,6 @@ paths:
           description: "Invalid tag value"
       security:
         - thingtemplate_auth:
-            - "write:things"
             - "read:things"
       deprecated: true
   /thing/{thingId}:
@@ -524,8 +559,11 @@ definitions:
           - "available"
           - "pending"
           - "sold"
-    xml:
-      name: "Thing"
+      createDate:
+        type: string
+        description: Date and time this thing was created
+        example: "2018-03-20T09:12:28Z"
+        format: date-time
   ThingApiResponse:
     type: "object"
     properties:
