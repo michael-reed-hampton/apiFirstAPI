@@ -31,15 +31,15 @@ paths:
       produces:
         - "application/json"
       parameters:
-        - name: "order_by"
+        - name: "orderBy"
           in: "query"
           description: "Ordering for the results"
           required: false
           type: "string"
           enum:
-            - "create_date"
+            - "createDate"
             - "name"
-        - name: "page_token"
+        - name: "pageToken"
           in: "query"
           description: "Token for the next page"
           required: false
