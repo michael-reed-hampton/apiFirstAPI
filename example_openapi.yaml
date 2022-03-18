@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  description: "Example openapi document."
+  description: "Example openapi document. Test"
   version: "1.0.0"
   title: "Example OpenAPI"
   termsOfService: "http://localhost:8080/terms/"
