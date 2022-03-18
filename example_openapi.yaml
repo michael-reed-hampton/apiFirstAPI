@@ -33,7 +33,7 @@ paths:
       parameters:
         - name: "orderBy"
           in: "query"
-          description: "Ordering for the results"
+          description: "Ordering for the results.  Should be ok."
           required: false
           type: "string"
           enum:
